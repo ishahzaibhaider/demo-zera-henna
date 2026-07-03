@@ -58,6 +58,15 @@ header{
 .nav-links{display:flex;gap:26px;align-items:center}
 .nav-links>a:not(.btn){font-weight:500;font-size:.94rem;color:var(--muted);border-bottom:2px solid transparent;padding:2px 0;transition:color .2s,border-color .2s}
 .nav-links>a:not(.btn):hover{color:var(--ink);border-color:var(--rust)}
+.lang-btn{
+  display:inline-flex;align-items:center;gap:7px;margin-left:20px;
+  background:transparent;border:1px solid var(--hair);border-radius:999px;
+  padding:8px 14px;cursor:pointer;color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;
+  transition:border-color .2s,color .2s;
+}
+.lang-btn:hover{border-color:var(--rust);color:var(--rust)}
+html[lang="ar"] .lang-btn span{font-family:'IBM Plex Mono',monospace}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:6px;padding:6px}
 .menu-btn span{width:26px;height:2px;background:var(--ink);transition:.3s var(--ease)}
 .menu-btn[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
@@ -400,4 +409,56 @@ footer .mono{color:rgba(240,229,210,.42);margin-top:6px}
   .offer-note{display:none}
   .display{font-size:clamp(2.4rem,10vw,3.2rem)}
   .polaroid{width:46%}
+}
+
+/* ═══════════ Arabic + RTL ═══════════
+   Amiri (classical Naskh, cut for Arabic) for display,
+   IBM Plex Sans Arabic for body/UI. */
+html[lang="ar"] body{font-family:'IBM Plex Sans Arabic','Tajawal',system-ui,sans-serif;line-height:1.85}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,
+html[lang="ar"] .display,html[lang="ar"] .display-2,
+html[lang="ar"] .brand,html[lang="ar"] .foot-brand,
+html[lang="ar"] .price,html[lang="ar"] .faq summary,
+html[lang="ar"] .ig-tile b,html[lang="ar"] .stat b,
+html[lang="ar"] .u-wrap{font-family:'Amiri',Georgia,serif;font-weight:700;line-height:1.35}
+html[lang="ar"] .brand em,html[lang="ar"] .u-wrap span{font-weight:700}
+/* Arabic is cursive — kill letter-spacing + uppercase everywhere or joins break */
+html[lang="ar"] .mono,html[lang="ar"] .kicker,html[lang="ar"] .brand-sub,
+html[lang="ar"] .num,html[lang="ar"] .go,html[lang="ar"] .cap,
+html[lang="ar"] .price small,html[lang="ar"] .chip,html[lang="ar"] .offer-bar p,
+html[lang="ar"] .proof,html[lang="ar"] .side-note,html[lang="ar"] .lang-btn,
+html[lang="ar"] .step-num,html[lang="ar"] .opt,html[lang="ar"] .soon,
+html[lang="ar"] .polaroid figcaption,html[lang="ar"] .demo-badge,
+html[lang="ar"] footer .mono{
+  letter-spacing:normal;text-transform:none;
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+}
+html[lang="ar"] .kicker::before{content:none}
+html[lang="ar"] .kicker::after{content:" ✿";color:var(--amber)}
+html[lang="ar"] .step-num{font-family:'Amiri',serif}
+html[lang="ar"] .lead{line-height:1.9}
+
+/* ── RTL layout flips ── */
+[dir="rtl"] .lang-btn{margin-left:0;margin-right:20px}
+[dir="rtl"] .side-note{text-align:left}
+[dir="rtl"] .price,[dir="rtl"] .go{text-align:left}
+[dir="rtl"] .row:hover{padding-left:10px;padding-right:22px}
+[dir="rtl"] .row:hover .go{transform:translateX(-4px)}
+[dir="rtl"] .arch-frame{margin-left:0;margin-right:auto}
+[dir="rtl"] .hero-visual .vine{left:auto;right:-44px;transform:scaleX(-1)}
+[dir="rtl"] .hero-visual .polaroid{left:auto;right:2%}
+[dir="rtl"] .bridal-visual .polaroid{right:auto;left:0}
+[dir="rtl"] .about-visual .polaroid.small{right:auto;left:0}
+[dir="rtl"] .hand-underline{left:auto;right:-2%}
+[dir="rtl"] .faq summary{padding:20px 4px 20px 36px}
+[dir="rtl"] .faq summary::after{right:auto;left:8px}
+[dir="rtl"] .wa-float{right:auto;left:22px}
+[dir="rtl"] .step-arrow{right:auto;left:-56px;transform:scaleX(-1)}
+[dir="rtl"] .step-arrow.flip{transform:scaleX(-1) scaleY(-1) rotate(-8deg)}
+[dir="rtl"] .includes li,[dir="rtl"] .foot-links{text-align:right}
+
+@media(max-width:760px){
+  [dir="rtl"] .nav-links{inset:0 auto 0 0;transform:translateX(-102%);box-shadow:20px 0 60px rgba(43,23,13,.25);border-left:none;border-right:1px solid var(--hair)}
+  [dir="rtl"] .nav-links.open{transform:none}
+  [dir="rtl"] .hero-visual .vine{right:auto;left:-30px;transform:none}
 }

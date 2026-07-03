@@ -13,8 +13,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239c3d1e'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23f5eee1' text-anchor='middle'%3EZH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Albert+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>
+  // apply saved language before paint so layout direction is correct immediately
+  (function(){try{var l=localStorage.getItem('zh-lang');if(l==='ar'){document.documentElement.lang='ar';document.documentElement.dir='rtl';}}catch(e){}})();
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,22 +38,28 @@
 <!-- grain -->
 <div class="grain" aria-hidden="true"></div>
 
-<!-- offer bar — real offer, taken from Zera Henna's own flyer -->
+<!-- offer bar -->
 <div class="offer-bar">
-  <p><span class="orn">✿</span> 10% off April – July bookings — mention the website when you message <span class="orn">✿</span></p>
+  <p><span class="orn">✿</span> <span data-i18n="offer">10% off April – July bookings — mention the website when you message</span> <span class="orn">✿</span></p>
 </div>
 
 <header id="top">
   <div class="shell nav">
-    <a class="brand" href="#top">Zera<em>&thinsp;Henna</em><span class="brand-dot">·</span><span class="brand-sub">by Sahdha</span></a>
+    <a class="brand" href="#top">
+      <span data-i18n="brand.name">Zera</span><em data-i18n="brand.em">&thinsp;Henna</em><span class="brand-dot">·</span><span class="brand-sub" data-i18n="brand.sub">by Sahdha</span>
+    </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
-      <a href="#bridal">Bridal</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn btn-solid nav-cta" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener">Book on WhatsApp</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#bridal" data-i18n="nav.bridal">Bridal</a>
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="btn btn-solid nav-cta wa-primary" data-ar-msg="مرحبًا سهدى! وصلتكِ من موقع زيرا حِنّا وأودّ حجز موعد حِنّاء ✨" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener" data-i18n="nav.cta">Book on WhatsApp</a>
     </nav>
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M3 12h18M12 2.5c3 3 3 16 0 19M12 2.5c-3 3-3 16 0 19"/></svg>
+      <span data-i18n="lang.toggle">عربي</span>
+    </button>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
@@ -58,17 +68,17 @@
 <section class="hero">
   <div class="shell hero-grid">
     <div class="hero-copy">
-      <p class="kicker">Sharjah, UAE — home service across all seven emirates</p>
-      <h1 class="display">The darkest<br><span class="u-wrap">stain<svg class="hand-underline draw" viewBox="0 0 300 22" aria-hidden="true"><path d="M6 14 C 70 5, 160 3, 294 9" /><path d="M14 18 C 95 12, 200 10, 282 14" /></svg></span> in the room.</h1>
-      <p class="lead">Bridal, nikkah and party henna by Sahdha — organic paste mixed by hand, drawn at your doorstep. Four hundred and fifty designs and counting since November&nbsp;2020.</p>
+      <p class="kicker" data-i18n="hero.kicker">Sharjah, UAE — home service across all seven emirates</p>
+      <h1 class="display"><span data-i18n="hero.h1a">The darkest</span><br><span class="u-wrap"><span data-i18n="hero.h1b">stain</span><svg class="hand-underline draw" viewBox="0 0 300 22" aria-hidden="true"><path d="M6 14 C 70 5, 160 3, 294 9" /><path d="M14 18 C 95 12, 200 10, 282 14" /></svg></span> <span data-i18n="hero.h1c">in the room.</span></h1>
+      <p class="lead" data-i18n="hero.lead">Bridal, nikkah and party henna by Sahdha — organic paste mixed by hand, drawn at your doorstep. Four hundred and fifty designs and counting since November&nbsp;2020.</p>
       <div class="hero-cta">
-        <a class="btn btn-solid btn-lg" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener">Book on WhatsApp
+        <a class="btn btn-solid btn-lg wa-primary" data-ar-msg="مرحبًا سهدى! وصلتكِ من موقع زيرا حِنّا وأودّ حجز موعد حِنّاء ✨" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener"><span data-i18n="hero.book">Book on WhatsApp</span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.6.6c-.2.2-.4.4-.2.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.1 1.4Z"/></svg>
         </a>
-        <a class="btn btn-line btn-lg" href="#work">See the work</a>
-        <span class="offer-note"><svg class="hand-circle draw" viewBox="0 0 120 46" aria-hidden="true"><path d="M60 5 C 20 4, 6 12, 7 23 C 8 36, 34 42, 63 41 C 95 40, 114 33, 113 21 C 112 10, 88 4, 52 6"/></svg>−10% this&nbsp;month</span>
+        <a class="btn btn-line btn-lg" href="#work" data-i18n="hero.see">See the work</a>
+        <span class="offer-note"><svg class="hand-circle draw" viewBox="0 0 120 46" aria-hidden="true"><path d="M60 5 C 20 4, 6 12, 7 23 C 8 36, 34 42, 63 41 C 95 40, 114 33, 113 21 C 112 10, 88 4, 52 6"/></svg><span data-i18n="hero.offerNote">−10% this&nbsp;month</span></span>
       </div>
-      <p class="proof mono">22.7K follow @zera.henna &nbsp;·&nbsp; dark stain guaranteed &nbsp;·&nbsp; organic paste</p>
+      <p class="proof mono" data-i18n="hero.proof">22.7K follow @zera.henna &nbsp;·&nbsp; dark stain guaranteed &nbsp;·&nbsp; organic paste</p>
     </div>
     <div class="hero-visual">
       <svg class="vine draw" viewBox="0 0 160 250" aria-hidden="true">
@@ -87,7 +97,7 @@
       </figure>
       <figure class="polaroid">
         <img src="assets/party-fingers.jpg" alt="Floral finger henna resting on a teal cushion" loading="lazy">
-        <figcaption class="mono">fresh off the cone — Sharjah</figcaption>
+        <figcaption class="mono" data-i18n="hero.polaroid">fresh off the cone — Sharjah</figcaption>
       </figure>
     </div>
   </div>
@@ -96,8 +106,8 @@
 <!-- ticker -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Bridal ✿ Nikkah ✿ Engagement ✿ Party ✿ Eid ✿ Organic cones ✿ Home service, all seven emirates ✿&nbsp;</span>
-    <span>Bridal ✿ Nikkah ✿ Engagement ✿ Party ✿ Eid ✿ Organic cones ✿ Home service, all seven emirates ✿&nbsp;</span>
+    <span data-i18n="ticker">Bridal ✿ Nikkah ✿ Engagement ✿ Party ✿ Eid ✿ Organic cones ✿ Home service, all seven emirates ✿&nbsp;</span>
+    <span data-i18n="ticker">Bridal ✿ Nikkah ✿ Engagement ✿ Party ✿ Eid ✿ Organic cones ✿ Home service, all seven emirates ✿&nbsp;</span>
   </div>
 </div>
 
@@ -105,48 +115,48 @@
 <section class="section" id="services">
   <div class="shell">
     <div class="sec-head rv">
-      <p class="kicker">What Sahdha books</p>
-      <h2 class="display-2">Services &amp; honest prices</h2>
+      <p class="kicker" data-i18n="svc.kicker">What Sahdha books</p>
+      <h2 class="display-2" data-i18n="svc.h2">Services &amp; honest prices</h2>
     </div>
     <div class="ledger">
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20book%20*Bridal%20Henna*%20%E2%9C%A8%20My%20wedding%20date%20is%3A%20" target="_blank" rel="noopener">
         <span class="num mono">01</span>
-        <span class="row-body"><h3>Bridal Henna</h3><p>Full hands &amp; feet, design matched to your outfit. The main event.</p></span>
-        <span class="price"><small>from</small> AED 350</span>
-        <span class="go mono">book&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t1">Bridal Henna</h3><p data-i18n="svc.d1">Full hands &amp; feet, design matched to your outfit. The main event.</p></span>
+        <span class="price" data-i18n="svc.p1"><small>from</small> AED 350</span>
+        <span class="go mono" data-i18n="svc.g1">book&nbsp;→</span>
       </a>
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20book%20*Nikkah%20%2F%20Engagement%20Henna*%20%E2%9C%A8%20My%20date%20is%3A%20" target="_blank" rel="noopener">
         <span class="num mono">02</span>
-        <span class="row-body"><h3>Nikkah &amp; Engagement</h3><p>Elegant, lighter than bridal — photographs beautifully.</p></span>
-        <span class="price"><small>from</small> AED 250</span>
-        <span class="go mono">book&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t2">Nikkah &amp; Engagement</h3><p data-i18n="svc.d2">Elegant, lighter than bridal — photographs beautifully.</p></span>
+        <span class="price" data-i18n="svc.p2"><small>from</small> AED 250</span>
+        <span class="go mono" data-i18n="svc.g1">book&nbsp;→</span>
       </a>
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20book%20*Party%20Henna*%20%E2%9C%A8%20My%20preferred%20date%20is%3A%20" target="_blank" rel="noopener">
         <span class="num mono">03</span>
-        <span class="row-body"><h3>Party Henna</h3><p>Seasonal designs, per hand. In and out before the guests arrive.</p></span>
-        <span class="price"><small>from</small> AED 100</span>
-        <span class="go mono">book&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t3">Party Henna</h3><p data-i18n="svc.d3">Seasonal designs, per hand. In and out before the guests arrive.</p></span>
+        <span class="price" data-i18n="svc.p3"><small>from</small> AED 100</span>
+        <span class="go mono" data-i18n="svc.g1">book&nbsp;→</span>
       </a>
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20book%20*Eid%20%2F%20Festive%20Henna*%20%E2%9C%A8%20My%20preferred%20date%20is%3A%20" target="_blank" rel="noopener">
         <span class="num mono">04</span>
-        <span class="row-body"><h3>Eid &amp; Festive</h3><p>Quick festive designs — book early, Eid week fills first.</p></span>
-        <span class="price"><small>from</small> AED 50</span>
-        <span class="go mono">book&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t4">Eid &amp; Festive</h3><p data-i18n="svc.d4">Quick festive designs — book early, Eid week fills first.</p></span>
+        <span class="price" data-i18n="svc.p4"><small>from</small> AED 50</span>
+        <span class="go mono" data-i18n="svc.g1">book&nbsp;→</span>
       </a>
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20a%20quote%20for%20a%20*group%20%2F%20event%20booking*%20%E2%9C%A8%20Details%3A%20" target="_blank" rel="noopener">
         <span class="num mono">05</span>
-        <span class="row-body"><h3>Groups &amp; Events</h3><p>Henna for your guests — weddings, baby showers, corporate.</p></span>
-        <span class="price">custom quote</span>
-        <span class="go mono">ask&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t5">Groups &amp; Events</h3><p data-i18n="svc.d5">Henna for your guests — weddings, baby showers, corporate.</p></span>
+        <span class="price" data-i18n="svc.p5">custom quote</span>
+        <span class="go mono" data-i18n="svc.g5">ask&nbsp;→</span>
       </a>
       <a class="row rv" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20order%20*ZH%20organic%20henna%20cones*%20%F0%9F%8C%BF%20Quantity%3A%20" target="_blank" rel="noopener">
         <span class="num mono">06</span>
-        <span class="row-body"><h3>ZH Organic Cones</h3><p>Hand-rolled in the studio, delivered across the UAE.</p></span>
-        <span class="price"><small>from</small> AED 25</span>
-        <span class="go mono">order&nbsp;→</span>
+        <span class="row-body"><h3 data-i18n="svc.t6">ZH Organic Cones</h3><p data-i18n="svc.d6">Hand-rolled in the studio, delivered across the UAE.</p></span>
+        <span class="price" data-i18n="svc.p6"><small>from</small> AED 25</span>
+        <span class="go mono" data-i18n="svc.g6">order&nbsp;→</span>
       </a>
     </div>
-    <p class="fine mono rv">* demo pricing — Sahdha confirms the final quote on WhatsApp before anything is fixed.</p>
+    <p class="fine mono rv" data-i18n="svc.fine">* demo pricing — Sahdha confirms the final quote on WhatsApp before anything is fixed.</p>
   </div>
 </section>
 
@@ -155,21 +165,21 @@
   <svg class="scallop" viewBox="0 0 1280 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 h1280 v8 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 Z"/></svg>
   <div class="shell bridal-grid">
     <div class="bridal-copy rv">
-      <p class="kicker gold">The main event</p>
-      <h2 class="display-2">The bridal sitting</h2>
-      <p class="lead-dark">One bride, one artist, one unhurried sitting. Sahdha matches the design to your outfit and jewellery, mixes the paste fresh, and stays until every finger is finished.</p>
+      <p class="kicker gold" data-i18n="bridal.kicker">The main event</p>
+      <h2 class="display-2" data-i18n="bridal.h2">The bridal sitting</h2>
+      <p class="lead-dark" data-i18n="bridal.lead">One bride, one artist, one unhurried sitting. Sahdha matches the design to your outfit and jewellery, mixes the paste fresh, and stays until every finger is finished.</p>
       <ul class="includes">
-        <li><span class="orn">❋</span> Design consultation over WhatsApp — send your outfit, get sketches back</li>
-        <li><span class="orn">❋</span> Organic paste, mixed the night before your sitting</li>
-        <li><span class="orn">❋</span> Full hands &amp; feet, 3–5 hour home sitting</li>
-        <li><span class="orn">❋</span> Aftercare instructions so the stain hits its darkest by day two</li>
+        <li><span class="orn">❋</span> <span data-i18n="bridal.i1">Design consultation over WhatsApp — send your outfit, get sketches back</span></li>
+        <li><span class="orn">❋</span> <span data-i18n="bridal.i2">Organic paste, mixed the night before your sitting</span></li>
+        <li><span class="orn">❋</span> <span data-i18n="bridal.i3">Full hands &amp; feet, 3–5 hour home sitting</span></li>
+        <li><span class="orn">❋</span> <span data-i18n="bridal.i4">Aftercare instructions so the stain hits its darkest by day two</span></li>
       </ul>
       <div class="stat-row">
-        <div class="stat"><b><span data-count="450">0</span>+</b><span class="mono">designs posted</span></div>
-        <div class="stat"><b><span data-count="22.7" data-decimal="1">0</span>K</b><span class="mono">followers</span></div>
-        <div class="stat"><b>Nov ’20</b><span class="mono">first booking</span></div>
+        <div class="stat"><b><span data-count="450">0</span>+</b><span class="mono" data-i18n="bridal.s1">designs posted</span></div>
+        <div class="stat"><b><span data-count="22.7" data-decimal="1">0</span>K</b><span class="mono" data-i18n="bridal.s2">followers</span></div>
+        <div class="stat"><b data-i18n="bridal.s3v">Nov ’20</b><span class="mono" data-i18n="bridal.s3">first booking</span></div>
       </div>
-      <a class="btn btn-cream btn-lg" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27m%20getting%20married%20and%20I%27d%20like%20to%20reserve%20a%20*bridal%20henna*%20date%20%E2%9C%A8%20My%20wedding%20date%20is%3A%20" target="_blank" rel="noopener">Reserve a bridal date</a>
+      <a class="btn btn-cream btn-lg wa-primary" data-ar-msg="مرحبًا سهدى! أنا مقبلة على الزواج وأودّ حجز موعد *حِنّاء عروس* ✨ تاريخ الزفاف: " href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27m%20getting%20married%20and%20I%27d%20like%20to%20reserve%20a%20*bridal%20henna*%20date%20%E2%9C%A8%20My%20wedding%20date%20is%3A%20" target="_blank" rel="noopener" data-i18n="bridal.cta">Reserve a bridal date</a>
     </div>
     <div class="bridal-visual rv">
       <figure class="arch-frame dark">
@@ -177,7 +187,7 @@
       </figure>
       <figure class="polaroid tilt-r">
         <img src="assets/nikkah-palms.jpg" alt="Nikkah henna palms held over red roses and jasmine" loading="lazy">
-        <figcaption class="mono">nikkah henna for Hamna</figcaption>
+        <figcaption class="mono" data-i18n="bridal.polaroid">nikkah henna for Hamna</figcaption>
       </figure>
     </div>
   </div>
@@ -188,31 +198,31 @@
   <div class="shell">
     <div class="sec-head split rv">
       <div>
-        <p class="kicker">Recent work</p>
-        <h2 class="display-2">Straight off the cone</h2>
+        <p class="kicker" data-i18n="work.kicker">Recent work</p>
+        <h2 class="display-2" data-i18n="work.h2">Straight off the cone</h2>
       </div>
-      <p class="mono side-note">every photo links to the real post<br>on @zera.henna — nothing staged</p>
+      <p class="mono side-note" data-i18n="work.note">every photo links to the real post<br>on @zera.henna — nothing staged</p>
     </div>
     <div class="collage">
       <a class="piece p1 rv" href="https://www.instagram.com/p/DaIEDDzDOiJ/" target="_blank" rel="noopener">
         <img src="assets/nikkah-palms.jpg" alt="Bridal palms with intricate nikkah henna, red roses behind" loading="lazy">
-        <span class="cap mono">nikkah — full palms ↗</span>
+        <span class="cap mono" data-i18n="work.c1">nikkah — full palms ↗</span>
       </a>
       <a class="piece p2 rv" href="https://www.instagram.com/p/DZ0Fo1ZDHeW/" target="_blank" rel="noopener">
         <img src="assets/bridal-backs.jpg" alt="Back-of-hand bridal henna with floral fill" loading="lazy">
-        <span class="cap mono">bridal — back of hand ↗</span>
+        <span class="cap mono" data-i18n="work.c2">bridal — back of hand ↗</span>
       </a>
       <a class="piece p3 rv" href="https://www.instagram.com/p/DaD0DsuDMbr/" target="_blank" rel="noopener">
         <img src="assets/engagement-coral.jpg" alt="Engagement henna, mixed floral and lace styles on coral fabric" loading="lazy">
-        <span class="cap mono">engagement florals ↗</span>
+        <span class="cap mono" data-i18n="work.c3">engagement florals ↗</span>
       </a>
       <a class="piece p4 rv" href="https://www.instagram.com/p/DaMnxGqjI9C/" target="_blank" rel="noopener">
         <img src="assets/lace-glove.jpg" alt="Trending lace glove henna design" loading="lazy">
-        <span class="cap mono">the lace glove ↗</span>
+        <span class="cap mono" data-i18n="work.c4">the lace glove ↗</span>
       </a>
       <a class="piece p5 ig-tile rv" href="https://www.instagram.com/zera.henna/" target="_blank" rel="noopener">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
-        <b>450+ more</b>
+        <b data-i18n="work.more">450+ more</b>
         <span class="mono">@zera.henna →</span>
       </a>
     </div>
@@ -225,23 +235,23 @@
     <div class="about-visual rv">
       <figure class="polaroid tilt-l big">
         <img src="assets/sahdha.jpg" alt="Sahdha standing beside a stack of packed henna cone orders" loading="lazy">
-        <figcaption class="mono">Sahdha, with a day’s cone orders</figcaption>
+        <figcaption class="mono" data-i18n="about.cap1">Sahdha, with a day’s cone orders</figcaption>
       </figure>
       <figure class="polaroid tilt-r small">
         <img src="assets/cones-studio.jpg" alt="Hand-rolled ZH henna cones being labelled in the studio" loading="lazy">
-        <figcaption class="mono">ZH cones, rolled &amp; labelled</figcaption>
+        <figcaption class="mono" data-i18n="about.cap2">ZH cones, rolled &amp; labelled</figcaption>
       </figure>
     </div>
     <div class="about-copy rv">
-      <p class="kicker">The artist</p>
-      <h2 class="display-2">Behind the cone</h2>
-      <p>Zera Henna is <em>Sahdha</em> — a Sharjah-based artist who took her first booking in November 2020 and hasn’t put the cone down since. Four hundred and fifty posted designs later, her order pile has its own photoshoot.</p>
-      <p>She mixes her own organic paste — no chemical dyes, which is why she can put <em>“dark stain guaranteed”</em> in writing. Brides get her at their doorstep anywhere in the UAE; everyone else gets her hand-rolled ZH cones delivered to theirs.</p>
+      <p class="kicker" data-i18n="about.kicker">The artist</p>
+      <h2 class="display-2" data-i18n="about.h2">Behind the cone</h2>
+      <p data-i18n="about.p1">Zera Henna is <em>Sahdha</em> — a Sharjah-based artist who took her first booking in November 2020 and hasn’t put the cone down since. Four hundred and fifty posted designs later, her order pile has its own photoshoot.</p>
+      <p data-i18n="about.p2">She mixes her own organic paste — no chemical dyes, which is why she can put <em>“dark stain guaranteed”</em> in writing. Brides get her at their doorstep anywhere in the UAE; everyone else gets her hand-rolled ZH cones delivered to theirs.</p>
       <div class="sig" aria-hidden="true">
         <svg class="draw" viewBox="0 0 200 60"><path d="M18 44 C 26 18, 38 12, 40 24 C 42 34, 34 46, 28 44 M 52 40 C 58 26, 68 24, 68 34 C 68 42, 60 44, 58 38 M 80 22 L 78 44 M 92 30 C 98 26, 104 28, 102 36 C 100 42, 92 42, 92 36 M 114 28 C 112 40, 114 42, 122 38 C 130 34, 132 26, 126 28 M 140 26 C 138 38, 140 42, 148 36 M 160 20 C 158 34, 158 42, 162 42"/></svg>
-        <span class="mono">— sahdha</span>
+        <span class="mono" data-i18n="about.sig">— sahdha</span>
       </div>
-      <a class="btn btn-line" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20order%20*ZH%20organic%20henna%20cones*%20%F0%9F%8C%BF%20Quantity%3A%20" target="_blank" rel="noopener">Order cones on WhatsApp</a>
+      <a class="btn btn-line wa-primary" data-ar-msg="مرحبًا سهدى! أودّ طلب *مخاريط ZH العضوية* 🌿 الكمية: " href="https://wa.me/971568589960?text=Hi%20Sahdha!%20I%27d%20like%20to%20order%20*ZH%20organic%20henna%20cones*%20%F0%9F%8C%BF%20Quantity%3A%20" target="_blank" rel="noopener" data-i18n="about.cta">Order cones on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -250,26 +260,26 @@
 <section class="section steps-sec">
   <div class="shell">
     <div class="sec-head rv">
-      <p class="kicker">Booking takes about 30 seconds</p>
-      <h2 class="display-2">How it works</h2>
+      <p class="kicker" data-i18n="steps.kicker">Booking takes about 30 seconds</p>
+      <h2 class="display-2" data-i18n="steps.h2">How it works</h2>
     </div>
     <div class="steps">
       <div class="step rv">
         <span class="step-num">١</span>
-        <h3>Message on WhatsApp</h3>
-        <p>Tap any button on this page — your message is already typed for you.</p>
+        <h3 data-i18n="steps.t1">Message on WhatsApp</h3>
+        <p data-i18n="steps.d1">Tap any button on this page — your message is already typed for you.</p>
         <svg class="step-arrow draw" viewBox="0 0 120 50" aria-hidden="true"><path d="M8 12 C 40 44, 80 44, 108 20"/><path d="M108 20 l-12 -2 m12 2 l-4 11"/></svg>
       </div>
       <div class="step rv">
         <span class="step-num">٢</span>
-        <h3>Pick design &amp; slot</h3>
-        <p>Send a photo of your outfit — Sahdha replies with designs that match, and a date.</p>
+        <h3 data-i18n="steps.t2">Pick design &amp; slot</h3>
+        <p data-i18n="steps.d2">Send a photo of your outfit — Sahdha replies with designs that match, and a date.</p>
         <svg class="step-arrow draw flip" viewBox="0 0 120 50" aria-hidden="true"><path d="M8 12 C 40 44, 80 44, 108 20"/><path d="M108 20 l-12 -2 m12 2 l-4 11"/></svg>
       </div>
       <div class="step rv">
         <span class="step-num">٣</span>
-        <h3>She comes to you</h3>
-        <p>Home service across all seven emirates. You sit back; the cone does the work.</p>
+        <h3 data-i18n="steps.t3">She comes to you</h3>
+        <p data-i18n="steps.d3">Home service across all seven emirates. You sit back; the cone does the work.</p>
       </div>
     </div>
   </div>
@@ -279,24 +289,24 @@
 <section class="section alt" id="faq">
   <div class="shell narrow">
     <div class="sec-head rv">
-      <p class="kicker">Asked every week</p>
-      <h2 class="display-2">Quick answers</h2>
+      <p class="kicker" data-i18n="faq.kicker">Asked every week</p>
+      <h2 class="display-2" data-i18n="faq.h2">Quick answers</h2>
     </div>
     <details class="faq rv">
-      <summary>How dark does the stain get?</summary>
-      <p>Dark. It’s the house promise — organic paste stains deepest 24–48 hours after the sitting and holds for one to two weeks with basic aftercare (which Sahdha sends you on WhatsApp).</p>
+      <summary data-i18n="faq.q1">How dark does the stain get?</summary>
+      <p data-i18n="faq.a1">Dark. It’s the house promise — organic paste stains deepest 24–48 hours after the sitting and holds for one to two weeks with basic aftercare (which Sahdha sends you on WhatsApp).</p>
     </details>
     <details class="faq rv">
-      <summary>Do you travel to my emirate?</summary>
-      <p>Yes — based in Sharjah, home service across all seven emirates. Travel is quoted with your booking so there are no surprises on the day.</p>
+      <summary data-i18n="faq.q2">Do you travel to my emirate?</summary>
+      <p data-i18n="faq.a2">Yes — based in Sharjah, home service across all seven emirates. Travel is quoted with your booking so there are no surprises on the day.</p>
     </details>
     <details class="faq rv">
-      <summary>How early should brides book?</summary>
-      <p>Two to four weeks ahead is comfortable. Eid weeks and peak wedding season go first — if your date is fixed, message today and hold it.</p>
+      <summary data-i18n="faq.q3">How early should brides book?</summary>
+      <p data-i18n="faq.a3">Two to four weeks ahead is comfortable. Eid weeks and peak wedding season go first — if your date is fixed, message today and hold it.</p>
     </details>
     <details class="faq rv">
-      <summary>Can I order cones without an appointment?</summary>
-      <p>Absolutely. ZH organic cones are hand-rolled in the studio and delivered anywhere in the UAE — same paste Sahdha uses on brides.</p>
+      <summary data-i18n="faq.q4">Can I order cones without an appointment?</summary>
+      <p data-i18n="faq.a4">Absolutely. ZH organic cones are hand-rolled in the studio and delivered anywhere in the UAE — same paste Sahdha uses on brides.</p>
     </details>
   </div>
 </section>
@@ -306,35 +316,41 @@
   <svg class="scallop" viewBox="0 0 1280 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 h1280 v8 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 a32 32 0 0 1-64 0 Z"/></svg>
   <div class="shell narrow">
     <div class="sec-head rv">
-      <p class="kicker gold">No forms into the void</p>
-      <h2 class="display-2">Lock your date</h2>
-      <p class="lead-dark center">This opens WhatsApp with your details pre-filled — nothing sends until <em>you</em> press send, and you land straight in Sahdha’s chat.</p>
+      <p class="kicker gold" data-i18n="book.kicker">No forms into the void</p>
+      <h2 class="display-2" data-i18n="book.h2">Lock your date</h2>
+      <p class="lead-dark center" data-i18n="book.lead">This opens WhatsApp with your details pre-filled — nothing sends until <em>you</em> press send, and you land straight in Sahdha’s chat.</p>
     </div>
     <form id="bookingForm" class="rv" novalidate>
       <div class="chips" role="group" aria-label="Quick service select">
-        <button type="button" class="chip active" data-service="Bridal Henna">Bridal</button>
-        <button type="button" class="chip" data-service="Nikkah / Engagement">Nikkah</button>
-        <button type="button" class="chip" data-service="Party Henna">Party</button>
-        <button type="button" class="chip" data-service="Eid / Festive">Eid</button>
-        <button type="button" class="chip" data-service="Group / Event">Group</button>
-        <button type="button" class="chip" data-service="ZH Organic Cones">Cones</button>
+        <button type="button" class="chip active" data-service="Bridal Henna" data-service-ar="حِنّاء عروس" data-i18n="chip.bridal">Bridal</button>
+        <button type="button" class="chip" data-service="Nikkah / Engagement" data-service-ar="نكاح / خطوبة" data-i18n="chip.nikkah">Nikkah</button>
+        <button type="button" class="chip" data-service="Party Henna" data-service-ar="حِنّاء حفلات" data-i18n="chip.party">Party</button>
+        <button type="button" class="chip" data-service="Eid / Festive" data-service-ar="حِنّاء العيد" data-i18n="chip.eid">Eid</button>
+        <button type="button" class="chip" data-service="Group / Event" data-service-ar="مجموعة / مناسبة" data-i18n="chip.group">Group</button>
+        <button type="button" class="chip" data-service="ZH Organic Cones" data-service-ar="مخاريط ZH العضوية" data-i18n="chip.cones">Cones</button>
       </div>
       <div class="frow">
-        <div class="field"><label for="fName">Your name</label><input id="fName" type="text" name="name" placeholder="Amina" required></div>
-        <div class="field"><label for="fDate">Preferred date</label><input id="fDate" type="date" name="date" required></div>
+        <div class="field"><label for="fName" data-i18n="book.name">Your name</label><input id="fName" type="text" name="name" placeholder="Amina" data-ph-ar="أمينة" required></div>
+        <div class="field"><label for="fDate" data-i18n="book.date">Preferred date</label><input id="fDate" type="date" name="date" required></div>
       </div>
       <div class="frow">
-        <div class="field"><label for="fEmirate">Where are you?</label>
+        <div class="field"><label for="fEmirate" data-i18n="book.where">Where are you?</label>
           <select id="fEmirate" name="emirate">
-            <option>Sharjah</option><option>Dubai</option><option>Ajman</option><option>Abu Dhabi</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option>
+            <option value="Sharjah" data-i18n="em.sharjah">Sharjah</option>
+            <option value="Dubai" data-i18n="em.dubai">Dubai</option>
+            <option value="Ajman" data-i18n="em.ajman">Ajman</option>
+            <option value="Abu Dhabi" data-i18n="em.abudhabi">Abu Dhabi</option>
+            <option value="Ras Al Khaimah" data-i18n="em.rak">Ras Al Khaimah</option>
+            <option value="Fujairah" data-i18n="em.fujairah">Fujairah</option>
+            <option value="Umm Al Quwain" data-i18n="em.uaq">Umm Al Quwain</option>
           </select>
         </div>
-        <div class="field"><label for="fNotes">Anything else <span class="opt mono">optional</span></label><input id="fNotes" type="text" name="notes" placeholder="e.g. 3 guests want party henna too"></div>
+        <div class="field"><label for="fNotes" data-i18n="book.notes">Anything else <span class="opt mono" data-i18n="book.optional">optional</span></label><input id="fNotes" type="text" name="notes" placeholder="e.g. 3 guests want party henna too" data-ph-ar="مثلًا: ٣ ضيفات يردن حِنّاء حفلات أيضًا"></div>
       </div>
-      <button type="submit" class="btn btn-cream btn-lg btn-block">Send it to Sahdha on WhatsApp
+      <button type="submit" class="btn btn-cream btn-lg btn-block"><span data-i18n="book.send">Send it to Sahdha on WhatsApp</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.6.6c-.2.2-.4.4-.2.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.1 1.4Z"/></svg>
       </button>
-      <p class="fine mono center">or just message directly: <a href="https://wa.me/971568589960" target="_blank" rel="noopener">056 858 9960</a></p>
+      <p class="fine mono center"><span data-i18n="book.direct">or just message directly:</span> <a href="https://wa.me/971568589960" target="_blank" rel="noopener" data-i18n="book.phone">056 858 9960</a></p>
     </form>
   </div>
 </section>
@@ -342,26 +358,26 @@
 <footer>
   <div class="shell foot-grid">
     <div>
-      <span class="brand foot-brand">Zera<em>&thinsp;Henna</em></span>
-      <p class="mono">Sharjah, UAE · drawing since Nov 2020</p>
+      <span class="brand foot-brand"><span data-i18n="brand.name">Zera</span><em data-i18n="brand.em">&thinsp;Henna</em></span>
+      <p class="mono" data-i18n="foot.tag">Sharjah, UAE · drawing since Nov 2020</p>
     </div>
     <div class="foot-links">
-      <a href="https://www.instagram.com/zera.henna/" target="_blank" rel="noopener">Instagram ↗</a>
-      <a href="https://wa.me/971568589960" target="_blank" rel="noopener">WhatsApp ↗</a>
-      <span class="soon mono">TikTok &amp; Snapchat — soon</span>
+      <a href="https://www.instagram.com/zera.henna/" target="_blank" rel="noopener" data-i18n="foot.ig">Instagram ↗</a>
+      <a href="https://wa.me/971568589960" target="_blank" rel="noopener" data-i18n="foot.wa">WhatsApp ↗</a>
+      <span class="soon mono" data-i18n="foot.soon">TikTok &amp; Snapchat — soon</span>
     </div>
-    <p class="demo-badge mono">Demo preview built for Zera Henna — prices shown are placeholders pending approval.</p>
+    <p class="demo-badge mono" data-i18n="foot.demo">Demo preview built for Zera Henna — prices shown are placeholders pending approval.</p>
   </div>
 </footer>
 
 <!-- floating WhatsApp -->
-<a class="wa-float" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<a class="wa-float wa-primary" data-ar-msg="مرحبًا سهدى! وصلتكِ من موقع زيرا حِنّا وأودّ حجز موعد حِنّاء ✨" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.6.6c-.2.2-.4.4-.2.7.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1.1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4.1.2.1.7-.1 1.4Z"/></svg>
-  <span>Book henna</span>
+  <span data-i18n="float">Book henna</span>
 </a>
 
 <!-- mobile sticky bar -->
-<a class="wa-bar" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener">Book on WhatsApp · 056 858 9960</a>
+<a class="wa-bar wa-primary" data-ar-msg="مرحبًا سهدى! وصلتكِ من موقع زيرا حِنّا وأودّ حجز موعد حِنّاء ✨" href="https://wa.me/971568589960?text=Hi%20Sahdha!%20Found%20you%20through%20the%20Zera%20Henna%20website%20%E2%80%94%20I%27d%20like%20to%20book%20a%20henna%20appointment%20%E2%9C%A8" target="_blank" rel="noopener" data-i18n="bar">Book on WhatsApp · 056 858 9960</a>
 
 <script src="script.js"></script>
 </body>
