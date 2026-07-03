@@ -327,6 +327,16 @@ footer .mono{color:rgba(240,229,210,.42);margin-top:6px}
 .wa-float:hover span{max-width:120px}
 .wa-bar{display:none}
 
+/* ─── hero entrance — staggered load, feels composed not dumped ─── */
+.hero-copy>*,.hero-visual{animation:heroIn .85s var(--ease) both}
+.hero-copy>.kicker{animation-delay:.05s}
+.hero-copy>.display{animation-delay:.16s}
+.hero-copy>.lead{animation-delay:.30s}
+.hero-copy>.hero-cta{animation-delay:.42s}
+.hero-copy>.proof{animation-delay:.54s}
+.hero-visual{animation-delay:.20s;animation-duration:1s}
+@keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
 /* ─── reveals — varied, not uniform ─── */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -351,7 +361,7 @@ footer .mono{color:rgba(240,229,210,.42);margin-top:6px}
 .draw.in .leaf:nth-of-type(7){transition-delay:1.1s}
 
 @media(prefers-reduced-motion:reduce){
-  .rv,.draw path,.draw circle,.draw .leaf{opacity:1;transform:none;transition:none;animation:none;stroke-dashoffset:0}
+  .rv,.draw path,.draw circle,.draw .leaf,.hero-copy>*,.hero-visual{opacity:1;transform:none;transition:none;animation:none;stroke-dashoffset:0}
   .draw .leaf{opacity:.9}
   .piece.rv img{filter:none}
   .ticker-track{animation:none}
@@ -366,8 +376,16 @@ footer .mono{color:rgba(240,229,210,.42);margin-top:6px}
 }
 @media(max-width:840px){
   .section{padding:72px 0}
-  .hero-grid{grid-template-columns:1fr;min-height:0;padding:40px 0 64px}
-  .hero-visual{max-width:440px;margin:0 auto;width:100%}
+  /* lead with the graphic on mobile — headline follows the image, not a wall of text */
+  .hero-grid{display:flex;flex-direction:column;gap:34px;min-height:0;padding:26px 0 60px}
+  .hero-visual{order:-1;max-width:390px;margin:0 auto;width:100%;padding-top:2px;animation-delay:.05s}
+  .hero-copy{display:flex;flex-direction:column}
+  .hero-copy>.kicker{animation-delay:.22s}
+  .hero-copy>.display{animation-delay:.30s;margin-bottom:16px}
+  .hero-copy>.lead{animation-delay:.40s}
+  .hero-copy>.hero-cta{animation-delay:.50s}
+  .hero-copy>.proof{animation-delay:.58s}
+  .lead{max-width:36ch}
   .vine{left:auto;right:-30px;transform:scaleX(-1)}
   .bridal-grid,.about-grid{grid-template-columns:1fr;gap:52px}
   .about-visual{min-height:0;padding-bottom:44px}
@@ -407,8 +425,15 @@ footer .mono{color:rgba(240,229,210,.42);margin-top:6px}
   }
   body{padding-bottom:54px}
   .offer-note{display:none}
-  .display{font-size:clamp(2.4rem,10vw,3.2rem)}
+  .hero-visual{max-width:340px}
+  .display{font-size:clamp(2.35rem,9.4vw,3.1rem);line-height:1.08}
+  .hero .kicker{margin-bottom:14px;font-size:.68rem}
+  .lead{font-size:1.08rem}
+  .hero-cta{gap:11px}
+  .hero-cta .btn-lg{width:100%;justify-content:center}
+  .proof{margin-top:20px;font-size:.66rem}
   .polaroid{width:46%}
+  html[lang="ar"] .hero .display{font-size:clamp(2.6rem,11vw,3.4rem)}
 }
 
 /* ═══════════ Arabic + RTL ═══════════
